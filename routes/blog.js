@@ -37,7 +37,7 @@ router.post('/posts', async function (req, res) {
 
 router.get('/posts/:id', async function (req, res) {
   const query = `
-    SELECT posts.*, authors.name AS author_name, authors.email FROM posts 
+    SELECT posts.*, authors.name AS author_name, authors.email AS author_email FROM posts 
     INNER JOIN authors ON posts.author_id = authors.id
     WHERE posts.id = ?
   `;
